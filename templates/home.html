@@ -1,0 +1,70 @@
+<div class="hero">
+
+    <h1>Find Your Dream Job</h1>
+
+    <p>Thousands of companies are hiring talented people.</p>
+
+</div>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Latest Jobs</h2>
+<form method="GET">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search by Job Title"
+    >
+
+    <input
+        type="text"
+        name="location"
+        placeholder="Search by Location"
+    >
+
+    <button type="submit">Search</button>
+
+</form>
+
+<br>
+
+{% for job in jobs %}
+
+<div class="job-card">
+
+    <h3>{{ job.title }}</h3>
+
+    <p>
+        <strong>Company:</strong> {{ job.company }}
+    </p>
+
+    <p>
+        <strong>Location:</strong> {{ job.location }}
+    </p>
+
+    <p>
+        <strong>Salary:</strong> {{ job.salary }}
+    </p>
+
+    <p>
+        {{ job.description }}
+    </p>
+    <form action="{% url 'apply_job' job.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Apply</button>
+</form>
+
+    <hr>
+
+</div>
+
+{% empty %}
+
+<h3>No jobs available.</h3>
+
+{% endfor %}
+
+{% endblock %}

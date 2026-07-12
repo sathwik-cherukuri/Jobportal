@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Edit Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Full Name</label><br>
+    <input type="text" name="fullname" value="{{ user.fullname }}"><br><br>
+
+    <label>Phone</label><br>
+    <input type="text" name="phone" value="{{ user.phone }}"><br><br>
+
+    <label>City</label><br>
+    <input type="text" name="city" value="{{ user.city }}"><br><br>
+
+    <label>Qualification</label><br>
+    <input type="text" name="qualification" value="{{ user.qualification }}"><br><br>
+
+    <label>Skills</label><br>
+    <input type="text" name="skills" value="{{ user.skills }}"><br><br>
+
+    <label>Resume</label><br>
+    <input type="file" name="resume"><br><br>
+
+    <button type="submit">Update Profile</button>
+
+</form>
+
+{% endblock %}

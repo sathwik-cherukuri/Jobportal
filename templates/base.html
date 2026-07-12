@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Job Portal</h1>
+
+    <hr>
+
+    <a href="/">Home</a> |
+    <a href="/login/">Login</a> |
+    <a href="/register/">Register</a> |
+    <a href="/my-applications/">My Applications</a>
+    <a href="/add-job/">Post Job</a>
+    <a href="/profile/">Profile</a>
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
+
+    <hr>
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+</html>

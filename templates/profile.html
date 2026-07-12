@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>My Profile</h2>
+
+<p><strong>Name:</strong> {{ user.fullname }}</p>
+
+<p><strong>Email:</strong> {{ user.email }}</p>
+
+<p><strong>Phone:</strong> {{ user.phone }}</p>
+
+<p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+
+<p><strong>City:</strong> {{ user.city }}</p>
+
+<p><strong>Qualification:</strong> {{ user.qualification }}</p>
+
+<p><strong>Skills:</strong> {{ user.skills }}</p>
+
+<p>
+    <strong>Resume:</strong>
+    <a href="{{ user.resume.url }}">Download Resume</a>
+</p>
+
+{% endblock %}
