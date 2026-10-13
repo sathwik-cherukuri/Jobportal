@@ -34,8 +34,8 @@ A web-based job portal developed using Python and Django. The application is des
 
 ### 1. Clone the repository
 ```bash
-git clone YOUR_REPOSITORY_URL
-cd YOUR_PROJECT_FOLDER
+git clone https://github.com/sathwik-cherukuri/Jobportal.git
+cd Jobportal
 ```
 
 ### 2. Create and activate a virtual environment
